@@ -1,6 +1,6 @@
 
 import React from 'react';
-
+import SmartLearnAINavbar from './navbarside/SmartLearnAINavbar'
 const ProgressAnalyticsDashboard = () => {
   // Generate heatmap cells
   const shades = ['bg-gray-100', 'bg-gray-200', 'bg-gray-300', 'bg-gray-400', 'bg-gray-500', 'bg-gray-600', 'bg-black'];
@@ -13,33 +13,7 @@ const ProgressAnalyticsDashboard = () => {
     <div className="bg-gray-100 min-h-screen font-sans text-black antialiased">
       <div className="min-h-screen flex flex-col">
         {/* Top Navigation */}
-        <header className="border-b border-gray-300 bg-white px-6 py-4 flex items-center justify-between sticky top-0 z-50">
-          <div className="flex items-center gap-3">
-            <div className="bg-black text-white p-1 rounded-lg">
-              <span className="material-symbols-outlined text-2xl">analytics</span>
-            </div>
-            <h1 className="text-xl font-bold tracking-tight">SmartLearn AI</h1>
-          </div>
-          <nav className="hidden md:flex items-center gap-8">
-            <a className="text-sm font-medium hover:underline underline-offset-4" href="#">Dashboard</a>
-            <a className="text-sm font-medium hover:underline underline-offset-4" href="#">Courses</a>
-            <a className="text-sm font-medium hover:underline underline-offset-4" href="#">Practice</a>
-            <a className="text-sm font-medium border-b-2 border-black" href="#">Progress</a>
-          </nav>
-          <div className="flex items-center gap-4">
-            <button className="bg-black hover:bg-gray-800 text-white px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 transition-colors">
-              <span className="material-symbols-outlined text-sm">download</span>
-              Download Performance PDF
-            </button>
-            <div className="w-10 h-10 rounded-full border border-gray-300 bg-gray-200 overflow-hidden">
-              <img 
-                alt="User profile avatar" 
-                className="w-full h-full object-cover" 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAB_1IpyaC5NiCkoQWPFW8m3gxZRmXRrnIxajzi50hgbXpyJh8t-hZHebo_lOz-ZqTyODdkoVNvjtCqllPJ4tgB0OA9G3rqav61SBX4grT78FfWGwbVfW1guhhKXjPc7Ltgdm7ax8IswszIL9H4Dei15YOVSgn6DXEXOXuNQ3CbJtjk5ntttOHuZtCgQfy5w7TCDaQnFOXUEJ32yJlG5JwZcYXB26pvCFQiA-bKRgSzt2y67vzB2-1CAW9_tuUdLow3fhkQo2oljNc"
-              />
-            </div>
-          </div>
-        </header>
+        <SmartLearnAINavbar/>
 
         <main className="flex-1 max-w-7xl mx-auto w-full p-6 space-y-6">
           {/* Hero Title */}

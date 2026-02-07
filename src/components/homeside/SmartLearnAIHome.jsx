@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from "react-router-dom";
 
 const SmartLearnAIHome = () => {
+let navigator=useNavigate()
   return (
     <div className="bg-white text-black min-h-screen font-sans">
       {/* Navigation */}
@@ -37,7 +38,7 @@ const SmartLearnAIHome = () => {
             Revolutionize your study habits with personalized learning paths and automated study plans tailored just for you.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button className="w-full sm:w-auto bg-black text-white px-8 py-4 rounded-xl font-bold text-lg hover:scale-[1.02] transition-transform">
+            <button onClick={()=>navigator('/DashboardOverview')} className="w-full sm:w-auto bg-black text-white px-8 py-4 rounded-xl font-bold text-lg hover:scale-[1.02] transition-transform">
               Get Started with Google
             </button>
             <button className="w-full sm:w-auto border border-gray-300 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-50 transition-colors">

@@ -1,48 +1,11 @@
 // SyllabusManager.jsx
 import React from 'react';
-
+import SmartLearnAINavbar from './navbarside/SmartLearnAINavbar'
 const SyllabusManager = () => {
   return (
     <div className="bg-white min-h-screen font-sans text-black">
       <div className="layout-container flex h-full grow flex-col">
-        {/* Top Navigation Bar */}
-        <header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-300 px-6 lg:px-10 py-3 bg-white sticky top-0 z-50">
-          <div className="flex items-center gap-8">
-            <div className="flex items-center gap-3 text-black">
-              <div className="size-6 bg-black flex items-center justify-center rounded-sm">
-                <span className="material-symbols-outlined text-white text-sm">school</span>
-              </div>
-              <h2 className="text-black text-lg font-bold leading-tight tracking-tight">SmartLearn AI</h2>
-            </div>
-            <nav className="hidden md:flex items-center gap-8">
-              <a className="text-gray-500 hover:text-black text-sm font-medium transition-colors" href="#">Dashboard</a>
-              <a className="text-black text-sm font-bold border-b-2 border-black pb-1" href="#">Syllabus</a>
-              <a className="text-gray-500 hover:text-black text-sm font-medium transition-colors" href="#">Courses</a>
-              <a className="text-gray-500 hover:text-black text-sm font-medium transition-colors" href="#">Reports</a>
-            </nav>
-          </div>
-          <div className="flex flex-1 justify-end items-center gap-6">
-            <label className="hidden sm:flex items-center relative min-w-40 max-w-64">
-              <span className="material-symbols-outlined absolute left-3 text-gray-400 text-xl">search</span>
-              <input 
-                className="w-full pl-10 pr-4 py-2 rounded-lg text-sm border-none bg-gray-100 focus:ring-1 focus:ring-black placeholder:text-gray-500 focus:outline-none" 
-                placeholder="Quick find..."
-              />
-            </label>
-            <div className="flex items-center gap-3">
-              <button className="material-symbols-outlined text-gray-500 hover:text-black cursor-pointer">notifications</button>
-              <div className="h-8 w-px bg-gray-300"></div>
-              <div className="flex items-center gap-3 group cursor-pointer">
-                <div 
-                  className="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-8 border border-gray-300" 
-                  style={{backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuCbjCpqktQPdVMq-SVQkgHLJdLQXGSm8uQ1XAWeExYlSK-bO2x2ey8oRwz2g2dg5n_a6m4ll1Q4X4oiXqn7L3ugryg5FHdQ2dtNAAvZzy0Mj6Nl9rtgxghMZa1OBrS3VGpN0Tsbfi20-nrwrQcGDzbg6vypKsVDx6PYk5QX8QWlxwOBynUUvCCKu4BShojcVWanoGe2A3dDXOI9zIJatkeeNaBFnA0hyX25c2NXnLYv5ircskelgJHgDPCp0bLAnxALf1uerXPF7xc")'}}
-                ></div>
-                <span className="hidden lg:block text-sm font-semibold">Alex Johnson</span>
-              </div>
-            </div>
-          </div>
-        </header>
-
+        <SmartLearnAINavbar/>
         {/* Page Content */}
         <main className="flex-1 max-w-[1200px] mx-auto w-full px-6 lg:px-10 py-8">
           {/* Breadcrumbs */}

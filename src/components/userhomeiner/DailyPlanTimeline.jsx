@@ -1,41 +1,12 @@
 // DailyPlanTimeline.jsx
 import React from 'react';
-
+import SmartLearnAINavbar from './navbarside/SmartLearnAINavbar'
 const DailyPlanTimeline = () => {
   return (
     <div className="bg-white min-h-screen font-sans text-black">
       <div className="layout-container flex h-full grow flex-col">
         {/* Header / Navigation */}
-        <header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-300 px-6 md:px-20 py-4 bg-white sticky top-0 z-50">
-          <div className="flex items-center gap-8">
-            <div className="flex items-center gap-3 text-black">
-              <div className="size-8 flex items-center justify-center bg-black text-white rounded">
-                <span className="material-symbols-outlined text-xl">school</span>
-              </div>
-              <h2 className="text-lg font-extrabold leading-tight tracking-tight uppercase">SmartLearn AI</h2>
-            </div>
-            <nav className="hidden md:flex items-center gap-8">
-              <a className="text-gray-600 hover:text-black text-sm font-semibold transition-colors" href="#">Dashboard</a>
-              <a className="text-black text-sm font-bold border-b-2 border-black" href="#">Courses</a>
-              <a className="text-gray-600 hover:text-black text-sm font-semibold transition-colors" href="#">Resources</a>
-              <a className="text-gray-600 hover:text-black text-sm font-semibold transition-colors" href="#">Settings</a>
-            </nav>
-          </div>
-          <div className="flex items-center gap-4">
-            <div className="bg-gray-100 rounded-lg px-3 py-2 flex items-center gap-2">
-              <span className="material-symbols-outlined text-gray-400 text-sm">search</span>
-              <input 
-                className="bg-transparent border-none focus:ring-0 text-sm p-0 w-32 md:w-48 placeholder:text-gray-400 focus:outline-none" 
-                placeholder="Search topics..." 
-                type="text"
-              />
-            </div>
-            <div 
-              className="size-10 rounded-full bg-gray-100 border border-gray-300 bg-cover bg-center"
-              style={{backgroundImage: `url('https://lh3.googleusercontent.com/aida-public/AB6AXuCnD8_babUKxCzGxdOPr5j_CDgqQzMGN8zCVKwlrOHpQH_4zy5k6_2xrXpGWcWqUsc8oXzNd9okupRSdSArdZbSpegcg2GRLiwSs5MpNVn7C9PTz4bxxJFu_9fbrEJNl432wqkxbBxKRAE3ty2Xm1bu_RG9pt-wvS0TWSrNRTWeyA3ntfxFqpgfjJO_GAktK4R4OzC69C7MQ_lYzFmb8L_LXm-JWW_4TvtUgtvqBSAtDBNzm5IuquBQE54ukMQnulKccU2L-vJ_A2A')`}}
-            ></div>
-          </div>
-        </header>
+         <SmartLearnAINavbar/>
 
         {/* Content Area */}
         <main className="flex-1 max-w-4xl mx-auto w-full px-6 py-12">

@@ -10,8 +10,17 @@ import StudentProfileSetup from './components/Profileside/StudentProfileSetup'
 import StudentProfile from './components/Profileside/StudentProfile'
 
 
-import Dashboard from './components/userhomeiner/SmartLearnAINavbar'
-import SmartLearnAINavbar from './components/userhomeiner/SmartLearnAINavbar'
+import SmartLearnAINavbar from './components/userhomeiner/navbarside/SmartLearnAINavbar'
+
+
+import AIMentorDoubts  from './components/userhomeiner/AIMentorDoubts'
+import AITestModule from './components/userhomeiner/AITestModule'
+import DailyPlanTimeline from './components/userhomeiner/DailyPlanTimeline'
+import DashboardOverview from './components/userhomeiner/DashboardOverview'
+import ProgressAnalyticsDashboard from './components/userhomeiner/ProgressAnalyticsDashboard'
+import SyllabusManager from './components/userhomeiner/SyllabusManager'
+import AIMentorInteractionHub from './components/userhomeiner/AIMentorInteractionHub'
+
 
 function App() {
   return (
@@ -23,6 +32,21 @@ function App() {
       <Route path='/StudentProfile' element={<StudentProfile/>}/>
 
       <Route path='/SmartLearnAINavbar' element={<SmartLearnAINavbar/>}/>
+
+
+
+
+
+
+
+
+      <Route path='/AIMentorDoubts' element={<AIMentorDoubts/>}/>
+      <Route path='/AITestModule' element={<AITestModule/>}/>
+      <Route path='/DailyPlanTimeline' element={<DailyPlanTimeline/>}/>
+      <Route path='/DashboardOverview' element={<DashboardOverview/>}/>
+      <Route path='/ProgressAnalyticsDashboard' element={<ProgressAnalyticsDashboard/>}/>
+      <Route path='/SyllabusManager' element={<SyllabusManager/>}/>
+      <Route path='/AIMentorInteractionHub' element={<AIMentorInteractionHub/>}/>  
     </Routes>
   );
 }

@@ -1,6 +1,6 @@
 // AITestModule.jsx
 import React from 'react';
-
+import SmartLearnAINavbar from './navbarside/SmartLearnAINavbar'
 const AITestModule = () => {
   return (
     <div className="bg-gray-100 min-h-screen font-sans text-black antialiased">
@@ -12,39 +12,7 @@ const AITestModule = () => {
       <div className="relative flex min-h-screen w-full flex-col pt-1">
         <div className="layout-container flex h-full grow flex-col">
           {/* Navigation */}
-          <header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-300 px-6 md:px-20 py-4 bg-white">
-            <div className="flex items-center gap-3 text-black">
-              <div className="size-6">
-                <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                  <g clipPath="url(#clip0_6_535)">
-                    <path 
-                      clipRule="evenodd" 
-                      d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" 
-                      fill="currentColor" 
-                      fillRule="evenodd"
-                    />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_6_535">
-                      <rect fill="white" height="48" width="48"></rect>
-                    </clipPath>
-                  </defs>
-                </svg>
-              </div>
-              <h2 className="text-lg font-bold leading-tight tracking-tight">SmartLearn AI</h2>
-            </div>
-            <div className="flex flex-1 justify-end gap-8 items-center">
-              <nav className="hidden md:flex items-center gap-8">
-                <a className="text-sm font-medium hover:underline" href="#">Courses</a>
-                <a className="text-sm font-medium hover:underline" href="#">Library</a>
-                <a className="text-sm font-medium hover:underline" href="#">Reports</a>
-              </nav>
-              <div 
-                className="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-9 border border-gray-300"
-                style={{backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuAeMszTicKl7f7U8jm1ujQsYuWIpcgTyG63uLhHXE1UBfP_gsLNRugFDJT_eyeRmZ764yvQ35JMiNIOJ0mQoP3ShpPflvkFoEhF1AcwSRIp8A_eC1UmY2CHUPKnSXEVcYqSz2Sl_7NzkPjv9jm7Bgld43ksP1YbGWro3rDgU403fPNOoF4KIknXQF5Efj0CUJIPHKwPnNw-HUYgCb3YURFPxVQwvgc8KBw9Sz_XrP00AVf5YB5IfQwG7ONRx60tM3ohElmYpA9-yv8")'}}
-              ></div>
-            </div>
-          </header>
+          <SmartLearnAINavbar/>
 
           <main className="flex-1 px-6 md:px-20 py-10 max-w-[1200px] mx-auto w-full">
             {/* Section 1: Dashboard / Selection */}

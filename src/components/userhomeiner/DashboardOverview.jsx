@@ -1,44 +1,13 @@
 // DashboardOverview.jsx
 import React from 'react';
+import SmartLearnAINavbar from './navbarside/SmartLearnAINavbar'
 
 const DashboardOverview = () => {
   return (
     <div className="bg-gray-100 min-h-screen font-sans text-black">
       <div className="layout-container flex h-full grow flex-col">
         {/* Top Navigation */}
-        <header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-300 px-6 py-4 bg-white">
-          <div className="flex items-center gap-8">
-            <div className="flex items-center gap-3 text-black">
-              <div className="size-8 flex items-center justify-center">
-                <span className="material-symbols-outlined text-3xl">terminal</span>
-              </div>
-              <h2 className="text-xl font-black leading-tight tracking-[-0.03em]">SmartLearn AI</h2>
-            </div>
-            <nav className="hidden md:flex items-center gap-8">
-              <a className="text-sm font-semibold leading-normal hover:underline underline-offset-4" href="#">Dashboard</a>
-              <a className="text-sm font-medium leading-normal text-gray-600 hover:text-black" href="#">Courses</a>
-              <a className="text-sm font-medium leading-normal text-gray-600 hover:text-black" href="#">Practice</a>
-              <a className="text-sm font-medium leading-normal text-gray-600 hover:text-black" href="#">Tests</a>
-            </nav>
-          </div>
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-2">
-              <button className="flex size-10 items-center justify-center rounded-lg hover:bg-gray-100 transition-colors">
-                <span className="material-symbols-outlined text-[22px]">notifications</span>
-              </button>
-              <button className="flex size-10 items-center justify-center rounded-lg hover:bg-gray-100 transition-colors">
-                <span className="material-symbols-outlined text-[22px]">settings</span>
-              </button>
-            </div>
-            <div className="h-10 w-10 rounded-full border border-black overflow-hidden bg-white">
-              <img 
-                className="h-full w-full object-cover" 
-                alt="Student profile avatar minimalist portrait" 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOgEAme0YtRU3yFCbiuX1Vnznrww_uw6cOC0C2VlM-7itzyZdDF3AU7MOUeTMdcy5f5S9M78dhgTfqjSngsjXVPM7kn4Z4kRWDLnK1g5Oq1_vdvPjBfhiYQSe9SXAdXkH5yeyWttfxPyLwJq-E1uSIbb2iZWYekEYIdL8Cn6PpNxJfJBZ6awFcy7DtUCdt6f51bozaKwReAOF8Dh023o-xMKsiNdxNPxKOfAq_iwsnTJiFNSMUgjDD3I2YZ7MKGnKXAy6h7lF90zw"
-              />
-            </div>
-          </div>
-        </header>
+        <SmartLearnAINavbar/>
 
         <main className="flex-1 px-6 py-8 md:px-12 lg:px-20 max-w-[1440px] mx-auto w-full">
           <div className="mb-10">
