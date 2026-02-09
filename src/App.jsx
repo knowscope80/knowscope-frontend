@@ -20,12 +20,13 @@ import DashboardOverview from './components/userhomeiner/DashboardOverview'
 import ProgressAnalyticsDashboard from './components/userhomeiner/ProgressAnalyticsDashboard'
 import SyllabusManager from './components/userhomeiner/SyllabusManager'
 import AIMentorInteractionHub from './components/userhomeiner/AIMentorInteractionHub'
-
+import GoogleAuth from "./components/auth/GoogleAuth";
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<SmartLearnAIHowItWorks/>} />
+      <Route path="/auth/google" element={<GoogleAuth />} />
       <Route path='/SmartLearnAIHome' element={<SmartLearnAIHome/>}/>
 
       <Route path='/StudentProfileSetup' element={<StudentProfileSetup/>}/>
