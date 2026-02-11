@@ -497,14 +497,6 @@ const StudentProfileSetup = () => {
                     <p className="text-xs text-red-500 mt-1">{errors.name}</p>
                   )}
                 </div>
-                {/* <div className="flex flex-col gap-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-black">Nickname (Optional)</label>
-                  <input 
-                    className="border-b border-gray-300 border-t-0 border-x-0 p-3 px-0 focus:ring-0 focus:border-black placeholder:text-gray-400 text-lg transition-colors bg-transparent focus:outline-none" 
-                    placeholder="John" 
-                    type="text"
-                  />
-                </div> */}
               </div>
 
               {/* Class Selection */}
@@ -603,35 +595,6 @@ const StudentProfileSetup = () => {
                 )}
               </div>
 
-              {/* Settings Toggles (UI only - not sent to backend)
-              <div className="mb-12">
-                <h2 className="text-2xl font-bold mb-6">Learning Preferences (Optional)</h2>
-                <div className="space-y-4">
-                  {[
-                    { label: 'Proactive Notifications', description: 'Get reminders for study sessions' },
-                    { label: 'Daily Study Summaries', description: 'Receive end-of-day progress reports' },
-                    { label: 'Focus Mode', description: 'Minimal distractions during study' }
-                  ].map((setting) => (
-                    <div 
-                      key={setting.label}
-                      className="flex items-center justify-between p-4 border border-gray-300 hover:border-black transition-colors"
-                    >
-                      <div>
-                        <p className="text-sm font-bold uppercase tracking-widest">{setting.label}</p>
-                        <p className="text-xs text-gray-500">{setting.description}</p>
-                      </div>
-                      <button 
-                        type="button"
-                        className="w-12 h-6 bg-gray-300 rounded-full p-1 flex items-center"
-                      >
-                        <div className="w-4 h-4 bg-white rounded-full transition-transform translate-x-0"></div>
-                      </button>
-                    </div>
-                  ))}
-                </div>
-              </div> */}
-
-              {/* Submit Button */}
               <div className="mt-8 pt-8 border-t border-gray-300">
                 <button
                   type="submit"
