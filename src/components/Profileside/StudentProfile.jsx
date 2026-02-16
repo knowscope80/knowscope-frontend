@@ -180,6 +180,7 @@ const StudentProfile = () => {
 
     try {
       const token = getToken();
+      console.log(token)
       if (!token) {
         throw new Error('No authentication token found. Please login first.');
       }
@@ -235,7 +236,7 @@ const StudentProfile = () => {
   const handleLogout = () => {
     localStorage.removeItem('access_token');
     localStorage.removeItem('refresh_token');
-    navigate('/login');
+    navigate('/SmartLearnAIHowItWorks');
   };
 
   // Handle delete data

@@ -364,10 +364,7 @@ const StudentProfileSetup = () => {
       }
 
       // Make API call
-      const response = await axios.post(
-        `${API_BASE_URL}/students/create`,
-        submitFormData,
-        {
+      const response = await axios.post(`${API_BASE_URL}/students/create`,submitFormData,{
           headers: {
             'Content-Type': 'multipart/form-data',
             'Authorization': `Bearer ${token}`

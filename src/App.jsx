@@ -25,9 +25,9 @@ import GoogleAuth from "./components/auth/GoogleAuth";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<SmartLearnAIHowItWorks/>} />
+      <Route path="/SmartLearnAIHowItWorks" element={<SmartLearnAIHowItWorks/>} />
       <Route path="/auth/google" element={<GoogleAuth />} />
-      <Route path='/SmartLearnAIHome' element={<SmartLearnAIHome/>}/>
+      <Route path='' element={<SmartLearnAIHome/>}/>
 
       <Route path='/StudentProfileSetup' element={<StudentProfileSetup/>}/>
       <Route path='/StudentProfile' element={<StudentProfile/>}/>
