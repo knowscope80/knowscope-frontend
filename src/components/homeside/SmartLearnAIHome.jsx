@@ -1,8 +1,40 @@
-// import React from 'react';
+// import React, { useEffect, useState } from 'react';
 // import { useNavigate } from "react-router-dom";
+// import axios from 'axios';
 
 // const SmartLearnAIHome = () => {
-// let navigator=useNavigate()
+//   const navigate = useNavigate();
+//   const [authError, setAuthError] = useState(null);
+//   const [profiledata,setProfil]=useState(null)
+
+//   useEffect(() => {
+//     checkAuthentication();
+//   }, []);
+
+//   const checkAuthentication = async () => {
+//     try {
+//       const token = localStorage.getItem('access_token');
+//       if (!token) {
+//         setAuthError('Not authenticated');
+//         navigate("/SmartLearnAIHowItWorks");
+//       }
+
+//       const response = await axios.get('http://127.0.0.1:8000/students/authenticateduser', {headers: {'Authorization': `Bearer ${token}`}});
+//       console.log(response.data)
+//       setProfil(response.data)
+
+
+//       if(!response.data){
+//         navigate('/StudentProfileSetup')
+//       }
+//       } catch (error) {
+//         navigate('/StudentProfileSetup')
+//        }};
+
+//   const handleGetStarted = () => {
+//       navigate('/DashboardOverview')
+//   };
+
 //   return (
 //     <div className="bg-white text-black min-h-screen font-sans">
 //       {/* Navigation */}
@@ -20,10 +52,7 @@
 //             <a className="text-sm font-semibold hover:text-gray-600 transition-colors" href="#">AI Mentor</a>
 //           </div>
 //           <div className="flex items-center gap-4">
-//             <button className="bg-black text-white px-5 py-2 rounded-lg text-sm font-bold tracking-tight hover:opacity-90 transition-all flex items-center gap-2">
-//               <span className="material-symbols-outlined text-sm">login</span>
-//               Login with Google
-//             </button>
+   
 //           </div>
 //         </div>
 //       </nav>
@@ -38,16 +67,23 @@
 //             Revolutionize your study habits with personalized learning paths and automated study plans tailored just for you.
 //           </p>
 //           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-//             <button onClick={()=>navigator('/DashboardOverview')} className="w-full sm:w-auto bg-black text-white px-8 py-4 rounded-xl font-bold text-lg hover:scale-[1.02] transition-transform">
-//               Get Started with Google
+//             <button 
+//               onClick={handleGetStarted}
+//               className="w-full sm:w-auto bg-black text-white px-8 py-4 rounded-xl font-bold text-lg hover:scale-[1.02] transition-transform"
+//             >
+//               Get Started
 //             </button>
 //             <button className="w-full sm:w-auto border border-gray-300 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-50 transition-colors">
 //               Watch Demo
 //             </button>
 //           </div>
+//           {authError && (
+//             <p className="text-red-500 text-sm mt-4">{authError}</p>
+//           )}
 //         </div>
 //       </header>
 
+//       {/* Rest of your existing UI sections remain exactly the same */}
 //       {/* Dashboard Preview */}
 //       <section className="px-6 mb-32">
 //         <div className="max-w-5xl mx-auto bg-white border border-gray-200 rounded-2xl shadow-2xl overflow-hidden relative">
@@ -342,9 +378,8 @@ import axios from 'axios';
 
 const SmartLearnAIHome = () => {
   const navigate = useNavigate();
-  const [isCheckingAuth, setIsCheckingAuth] = useState(false);
   const [authError, setAuthError] = useState(null);
-  const [profiledata,setProfil]=useState(null)
+  const [profiledata, setProfil] = useState(null);
 
   useEffect(() => {
     checkAuthentication();
@@ -353,72 +388,32 @@ const SmartLearnAIHome = () => {
   const checkAuthentication = async () => {
     try {
       const token = localStorage.getItem('access_token');
-      console.log(token)
       if (!token) {
         setAuthError('Not authenticated');
-        setIsCheckingAuth(false);
+        navigate("/SmartLearnAIHowItWorks");
         return;
       }
 
       const response = await axios.get('http://127.0.0.1:8000/students/authenticateduser', {
-        headers: {
-          'Authorization': `Bearer ${token}`
-        }
+        headers: { 'Authorization': `Bearer ${token}` }
       });
-      console.log(response.data)
-      setProfil(response.data)
-      if (response.data && response.data.error) {
+      console.log(response.data);
+      setProfil(response.data);
+        if (!profiledata) {
+        console.log('.........................') 
         navigate('/StudentProfileSetup');
-        return;
-      }
-      setIsCheckingAuth(false);
-      
+  }
+
     } catch (error) {
-      console.error('Auth check failed:', error);
-      
-      if (error.response && error.response.status === 401) {
-        localStorage.removeItem('access_token'); 
-        navigate('/SmartLearnAIHowItWorks');
-      } else if (error.response && error.response.data && error.response.data.error) {
-        navigate('/StudentProfileSetup');
-      } else {
-        setAuthError('Authentication check failed');
-        setIsCheckingAuth(false);
-      }
+      console.error("Auth check failed:", error);
+      navigate('/auth/google');
     }
   };
-
-  useEffect(()=>{
- const token = localStorage.getItem('access_token');
-    if (!token) {
-      navigate('/SmartLearnAIHowItWorks');
-    } else if (!profiledata) {
-      navigate('/StudentProfileSetup');
-    }
-  },[])
-
-
+  
 
   const handleGetStarted = () => {
-    // const token = localStorage.getItem('access_token');
-    // if (!token) {
-    //   navigate('/SmartLearnAIHowItWorks');
-    // } else if (!profiledata) {
-    //   navigate('/StudentProfileSetup');
-    
-      navigate('/DashboardOverview')
+    navigate('/DashboardOverview');
   };
-
-  if (isCheckingAuth) {
-    return (
-      <div className="bg-white text-black min-h-screen font-sans flex items-center justify-center">
-        <div className="text-center">
-          <div className="size-12 border-4 border-gray-200 border-t-black rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-gray-600">Checking authentication...</p>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="bg-white text-black min-h-screen font-sans">
@@ -437,13 +432,7 @@ const SmartLearnAIHome = () => {
             <a className="text-sm font-semibold hover:text-gray-600 transition-colors" href="#">AI Mentor</a>
           </div>
           <div className="flex items-center gap-4">
-            <button 
-              onClick={() => navigate('/auth/google')}
-              className="bg-black text-white px-5 py-2 rounded-lg text-sm font-bold tracking-tight hover:opacity-90 transition-all flex items-center gap-2"
-            >
-              <span className="material-symbols-outlined text-sm">login</span>
-              Login with Google
-            </button>
+            {/* optional user menu can be added here */}
           </div>
         </div>
       </nav>
@@ -458,11 +447,11 @@ const SmartLearnAIHome = () => {
             Revolutionize your study habits with personalized learning paths and automated study plans tailored just for you.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button 
+            <button
               onClick={handleGetStarted}
               className="w-full sm:w-auto bg-black text-white px-8 py-4 rounded-xl font-bold text-lg hover:scale-[1.02] transition-transform"
             >
-              Get Started with Google
+              Get Started
             </button>
             <button className="w-full sm:w-auto border border-gray-300 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-50 transition-colors">
               Watch Demo
@@ -474,7 +463,6 @@ const SmartLearnAIHome = () => {
         </div>
       </header>
 
-      {/* Rest of your existing UI sections remain exactly the same */}
       {/* Dashboard Preview */}
       <section className="px-6 mb-32">
         <div className="max-w-5xl mx-auto bg-white border border-gray-200 rounded-2xl shadow-2xl overflow-hidden relative">
@@ -533,9 +521,9 @@ const SmartLearnAIHome = () => {
                 </div>
               </div>
               <div className="relative">
-                <input 
-                  className="w-full text-[11px] border border-gray-300 rounded-lg pr-8 focus:ring-black focus:border-black focus:outline-none px-3 py-2" 
-                  placeholder="Ask anything..." 
+                <input
+                  className="w-full text-[11px] border border-gray-300 rounded-lg pr-8 focus:ring-black focus:border-black focus:outline-none px-3 py-2"
+                  placeholder="Ask anything..."
                   type="text"
                 />
                 <span className="material-symbols-outlined absolute right-2 top-2.5 text-sm text-gray-600">send</span>
@@ -614,7 +602,7 @@ const SmartLearnAIHome = () => {
       <section className="px-6 py-16 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Technology & Benefits</h2>
-          
+
           <div className="grid md:grid-cols-2 gap-8">
             {/* Technology Stack */}
             <div className="bg-white p-8 rounded-2xl border border-gray-200">

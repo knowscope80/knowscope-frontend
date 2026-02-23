@@ -16,11 +16,7 @@ let navigate=useNavigate()
           </div>
           <h2 className="text-black text-xl font-bold tracking-tighter uppercase">SmartLearn AI</h2>
         </div>
-        {/* <nav className="hidden md:flex flex-1 justify-center gap-12">
-          <a className="text-black text-xs font-bold uppercase tracking-widest hover:opacity-50 transition-opacity" href="#">The Lab</a>
-          <a className="text-black text-xs font-bold uppercase tracking-widest hover:opacity-50 transition-opacity" href="#">Architecture</a>
-          <a className="text-black text-xs font-bold uppercase tracking-widest hover:opacity-50 transition-opacity" href="#">Manifesto</a>
-        </nav> */}
+ 
         <div className="flex items-center gap-4">
           <button onClick={() => navigate("/auth/google")} className="bg-black text-white px-6 py-2 text-xs font-bold uppercase tracking-widest hover:opacity-90 transition-opacity">
             Enter Portal

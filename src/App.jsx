@@ -27,7 +27,7 @@ function App() {
     <Routes>
       <Route path="/SmartLearnAIHowItWorks" element={<SmartLearnAIHowItWorks/>} />
       <Route path="/auth/google" element={<GoogleAuth />} />
-      <Route path='' element={<SmartLearnAIHome/>}/>
+      <Route path='/' element={<SmartLearnAIHome/>}/>
 
       <Route path='/StudentProfileSetup' element={<StudentProfileSetup/>}/>
       <Route path='/StudentProfile' element={<StudentProfile/>}/>
