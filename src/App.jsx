@@ -21,6 +21,7 @@ import ProgressAnalyticsDashboard from './components/userhomeiner/ProgressAnalyt
 import SyllabusManager from './components/userhomeiner/SyllabusManager'
 import GoogleAuth from "./components/auth/GoogleAuth";
 
+import SyllabusDetailPage from './components/userhomeiner/SyllabusDetailPage'
 
 
 import Textbooks from './components/sample'
@@ -42,12 +43,18 @@ function App() {
       <Route path='/Textbooks' element={<Textbooks/>}/>
 
 
+
+
+
       <Route path='/AIMentorDoubts' element={<AIMentorDoubts/>}/>
       <Route path='/AITestModule' element={<AITestModule/>}/>
       <Route path='/DailyPlanTimeline' element={<DailyPlanTimeline/>}/>
       <Route path='/DashboardOverview' element={<DashboardOverview/>}/>
       <Route path='/ProgressAnalyticsDashboard' element={<ProgressAnalyticsDashboard/>}/>
+
+
       <Route path='/SyllabusManager' element={<SyllabusManager/>}/>
+      <Route path='/SyllabusDetailPage' element={<SyllabusDetailPage/>}/>
     </Routes>
     
   );
