@@ -23,6 +23,11 @@ import GoogleAuth from "./components/auth/GoogleAuth";
 
 import SyllabusDetailPage from './components/userhomeiner/SyllabusDetailPage'
 
+import AdminDashboard from './components/adminside/admindashboard'
+import AddSyllabus from './components/adminside/AddSyllabus'
+import AdminUserManagement  from './components/adminside/AdminUserManagement'
+import AdminNavbar from './components/adminside/navbarside/AdminNavbar'
+import AdminVectorDatabaseset from './components/adminside/AdminVectorDatabaseset'
 
 function App() {
   return (
@@ -52,10 +57,25 @@ function App() {
 
       <Route path='/SyllabusManager' element={<SyllabusManager/>}/>
       <Route path='/SyllabusDetailPage' element={<SyllabusDetailPage/>}/>
+
+
+
+
+
+      <Route path='/AdminDashboard' element={<AdminDashboard/>}/>
+      <Route path='/AddSyllabus' element={<AddSyllabus/>}/>
+      <Route path='/AdminUserManagement' element={<AdminUserManagement/>}/>
+      <Route path='/AdminNavbar' element={<AdminNavbar/>}/>
+      <Route path='/AdminVectorDatabaseset'  element={<AdminVectorDatabaseset/>}/>
     </Routes>
     
   );
 }
 
 export default App;
+
+
+
+
+
 
