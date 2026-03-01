@@ -11,7 +11,36 @@ const SmartLearnAIHome = () => {
     checkAuthentication();
   }, []);
 
-  const checkAuthentication = async () => {
+const checkAuthentication = async () => {
+    try {
+      const token = localStorage.getItem('access_token');
+      if (!token) {
+        setAuthError('Not authenticated');
+        navigate("/SmartLearnAIHowItWorks");
+        return;
+      }
+
+      const response = await axios.get('http://127.0.0.1:8000/auth/CurrentCurrentAuthenticatedperson', {
+        headers: { 'Authorization': `Bearer ${token}` }
+      });
+      console.log(response);
+      if (response.data.user.role=="admin"){
+        navigate('/AdminDashboard');
+      }else if(response.data.user.role=="user"){
+         checkprofiledatafunc()
+      }
+
+    } catch (error) {
+      console.error("Auth check failed:", error);
+         navigate('/auth/google');
+    }
+  };
+
+
+
+
+
+  const checkprofiledatafunc = async () => {
     try {
       const token = localStorage.getItem('access_token');
       if (!token) {
@@ -23,7 +52,7 @@ const SmartLearnAIHome = () => {
       const response = await axios.get('http://127.0.0.1:8000/students/authenticateduser', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
-      console.log(response.data,'....');
+      console.log(response);
       setProfil(response.data);
       if (response.data.error=="Student profile not found for this user") {
         navigate('/StudentProfileSetup');

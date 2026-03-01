@@ -131,8 +131,8 @@ const SmartLearnAINavbar = () => {
           </div>
         </div>
       </nav>
-
-      <style jsx>{`
+       
+      <style>{`
         .nav-link-hover {
           position: relative;
         }
