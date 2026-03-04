@@ -28,6 +28,8 @@ import AddSyllabus from './components/adminside/AddSyllabus'
 import AdminUserManagement  from './components/adminside/AdminUserManagement'
 import AdminNavbar from './components/adminside/navbarside/AdminNavbar'
 import AdminVectorDatabaseset from './components/adminside/AdminVectorDatabaseset'
+import TestInterface from './components/userhomeiner/TestInterface'
+
 
 function App() {
   return (
@@ -67,6 +69,7 @@ function App() {
       <Route path='/AdminUserManagement' element={<AdminUserManagement/>}/>
       <Route path='/AdminNavbar' element={<AdminNavbar/>}/>
       <Route path='/AdminVectorDatabaseset'  element={<AdminVectorDatabaseset/>}/>
+      <Route path='/TestInterface'  element={<TestInterface/>}/>
     </Routes>
     
   );
