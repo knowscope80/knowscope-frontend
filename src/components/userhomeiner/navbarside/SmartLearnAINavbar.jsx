@@ -60,20 +60,7 @@ const SmartLearnAINavbar = () => {
             <span className="text-sm font-medium">Syllabus</span>
           </Link>
           
-          {/* Daily Plan Link */}
-          <Link 
-            to='/DailyPlanTimeline' 
-            className={`nav-link-hover flex items-center gap-2 px-3 py-2 transition-colors ${
-              isActive('/DailyPlanTimeline') 
-                ? 'text-black font-semibold' 
-                : 'text-gray-600 hover:text-black'
-            }`}
-          >
-            <span className="material-symbols-outlined" style={{ 
-              fontVariationSettings: isActive('/DailyPlanTimeline') ? "'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24" : "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24"
-            }}>calendar_today</span>
-            <span className="text-sm font-medium">Daily Plan</span>
-          </Link>
+        
           
           {/* Doubts Link */}
           <Link 

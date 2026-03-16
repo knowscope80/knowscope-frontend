@@ -864,7 +864,7 @@ const AITestModule = () => {
   const [showDifficultyModal, setShowDifficultyModal] = useState(false);
   const [studentData, setStudentData] = useState(null);
   const [fetchingStudent, setFetchingStudent] = useState(true);
-  
+  const [topicvalue,setTopic]=useState('')
   // Get stored values from Redux
   const storedClass = useSelector((state) => state.app.studentsclass);
   const storedSubject = useSelector((state) => state.app.studentssubject);
@@ -969,7 +969,8 @@ const AITestModule = () => {
       const requestData = {
         subject: selectedSubject.subject,
         class_level: selectedClass,
-        difficulty: selectedDifficulty.toLowerCase()
+        difficulty: selectedDifficulty.toLowerCase(),
+        topic:topicvalue
       };
       
       console.log('Generating test with data:', requestData);
@@ -1164,6 +1165,7 @@ const AITestModule = () => {
                             {level}
                           </button>
                         ))}
+                     <input type="text" placeholder="Enter topic" value={topicvalue}  onChange={(e) => setTopic(e.target.value)} className="col-span-3 border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:border-black"/>
                       </div>
                     </div>
 

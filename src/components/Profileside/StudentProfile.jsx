@@ -239,13 +239,7 @@ const StudentProfile = () => {
     navigate('/SmartLearnAIHowItWorks');
   };
 
-  // Handle delete data
-  const handleDeleteData = () => {
-    if (window.confirm('Are you sure you want to delete your data? This action cannot be undone.')) {
-      // Implement delete functionality here
-      alert('Delete functionality to be implemented');
-    }
-  };
+
 
   // Handle edit actions
   const handleEdit = (field) => {
@@ -398,7 +392,7 @@ const StudentProfile = () => {
                 {studentData.name || 'Student Name'}
               </h1>
               <p className="text-gray-600 font-medium text-lg">
-                Student ID: {studentData.id ? `SL-${studentData.id.slice(-5).toUpperCase()}` : 'Not assigned'} — Year 2024
+                Student ID: {studentData.id ? `SL-${studentData.id.slice(-5).toUpperCase()}` : 'Not assigned'} 
               </p>
               <p className="text-gray-500 text-sm">
                 Created by: {studentData.created_by ? `User ${studentData.created_by.slice(-6)}` : 'System'}
@@ -406,7 +400,7 @@ const StudentProfile = () => {
             </div>
           </section>
 
-          {/* Stats Grid Section */}
+          {/* Stats Grid Section
           <section>
             <h3 className="text-xs font-black uppercase tracking-[0.2em] mb-6 text-gray-500">Success Metrics</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -439,7 +433,7 @@ const StudentProfile = () => {
                 </div>
               </div>
             </div>
-          </section>
+          </section> */}
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Academic Details */}
@@ -557,12 +551,7 @@ const StudentProfile = () => {
                 >
                   Logout
                 </button>
-                <button
-                  onClick={handleDeleteData}
-                  className="flex-1 md:flex-none px-10 py-3 bg-gray-100 text-gray-500 font-bold uppercase text-xs tracking-[0.2em] hover:bg-red-50 hover:text-red-600 transition-colors"
-                >
-                  Delete Data
-                </button>
+        
                 <button
                   onClick={() => fetchStudentProfile()}
                   className="flex-1 md:flex-none px-10 py-3 bg-black text-white font-bold uppercase text-xs tracking-[0.2em] hover:bg-gray-800 transition-colors flex items-center justify-center gap-2"
@@ -578,7 +567,7 @@ const StudentProfile = () => {
         {/* Simple Footer */}
         <footer className="p-8 border-t border-gray-300 text-center">
           <p className="text-[10px] font-black uppercase tracking-[0.4em] text-gray-400">
-            SmartLearn AI © 2024 — Precision Learning Systems
+            SmartLearn AI © 2026 — Precision Learning Systems
           </p>
           <p className="text-[8px] font-medium tracking-widest text-gray-400 mt-2">
             Profile last updated: {new Date().toLocaleDateString()}
